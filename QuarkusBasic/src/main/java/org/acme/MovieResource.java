@@ -3,6 +3,7 @@ package org.acme;
 import java.util.ArrayList;
 import java.util.stream.Collectors;  
 import java.util.List;
+import java.util.Optional;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -21,7 +22,7 @@ import org.acme.Movie;
 @Path("/movies")
 public class MovieResource {
 	
-	public static List<Object> movies=new ArrayList<>();
+	public static List<Movie> movies=new ArrayList<>();
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -56,7 +57,6 @@ public class MovieResource {
 	  movies=movies.stream().map(movieValues-> { 
       if(((Movie) movieValues).getId().equals(id)) { 
     	  ((Movie) movieValues).setMovie(updateMovie);
-    	  return  updateMovie; 
     	  } 
       return movieValues;
 	  
@@ -65,15 +65,21 @@ public class MovieResource {
 	  return Response.ok(movies).build(); 
 	 }
 	 
-	
-	
 	@DELETE
-	@Path("{movieToDelete}")
-	@Consumes(MediaType.TEXT_PLAIN)
-	public Response deleteMovie(@PathParam("movieToDelete")String movieToDelete) {
-		boolean removed=movies.remove(movieToDelete);
-		return removed ? Response.noContent().build():
-			Response.status(Response.Status.BAD_REQUEST).build();	
+	@Path("{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response deleteMovie(@PathParam("id")Long id) {
+		Optional<Movie>  movieToDelete=movies.stream().filter(movie-> movie.getId().equals(id))
+				.findFirst();
+		
+		boolean removed=false;
+		if( movieToDelete.isPresent()) {
+			removed=movies.remove( movieToDelete.get());
+		}
+		if(removed) {
+			return Response.noContent().build();
+		}
+		return Response.status(Response.Status.BAD_REQUEST).build();	
 	}
 
 }
