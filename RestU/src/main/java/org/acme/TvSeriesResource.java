@@ -17,17 +17,20 @@ import org.eclipse.microprofile.rest.client.inject.RestClient;
 public class TvSeriesResource {
 	
 	@RestClient 
-	@Inject
-	TvSeriesProxy proxy;
+	TvSeriesProxy tvSeriesProxy;
+	
+	@RestClient 
+	EpisodeProxy episodeProxy;
 	
 	private  List<TvSeries> tvSeries=new ArrayList<>();
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response get(@QueryParam("title") String title) {
-		TvSeries tvSerie=proxy.get("Game of thrones");
+		TvSeries tvSerie=tvSeriesProxy.get(title);
+		List<Episode> episodes=episodeProxy.get(tvSerie.getId());
 		tvSeries.add(tvSerie);
-		return Response.ok(tvSeries).build();
+		return Response.ok(episodes).build();
 	}
 
 }

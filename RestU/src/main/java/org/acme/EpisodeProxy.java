@@ -1,22 +1,23 @@
 package org.acme;
 
+import java.util.List;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
-
-@Path("/singlesearch")
+@Path("/shows")
 @Produces(MediaType.APPLICATION_JSON)
-@RegisterRestClient
-public interface TvSeriesProxy {
+public interface EpisodeProxy {
 	
 	
 	@GET
-	@Path("/shows")
-	TvSeries get(@QueryParam("q") String title); 
+	@Path("{id}/episodes")
+	List<Episode> get(@PathParam("id") Long id); 
 
 }
