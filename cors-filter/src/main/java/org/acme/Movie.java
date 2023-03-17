@@ -6,6 +6,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 public class Movie {
 	
 	private Long id;
+	
 	@Schema(required=true)
 	private String movie;
 	

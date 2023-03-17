@@ -17,12 +17,11 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.acme.Movie;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
-import  org.eclipse.microprofile.openapi.annotations.media.Content;
-import  org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.eclipse.microprofile.openapi.annotations.media.Content;
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 
@@ -30,7 +29,7 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 @Tag(name="Movie Resource",description="Movie REST APIs")
 public class MovieResource {
 	
-	// http://localhost:808/swagger-ui
+	// http://localhost:8080/swagger-ui
 	
 	public static List<Movie> movies=new ArrayList<>();
 	
