@@ -30,7 +30,7 @@ import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 @Tag(name="Movie Resource",description="Movie REST APIs")
 public class MovieResource {
 	
-	// http://localhost:808/swagger-ui
+	// http://localhost:8080/swagger-ui
 	
 	public static List<Movie> movies=new ArrayList<>();
 	

@@ -18,8 +18,7 @@ import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 						url="http://localhost:8080"
 						)
 				),
-		tags= {
-				@Tag(name="movies",description="Movies")
+		tags= {@Tag(name="movies",description="Movies")
 		}
 		)
 public class MovieApplication extends Application{
