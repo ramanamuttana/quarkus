@@ -1,7 +1,7 @@
 package org.acme;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
+// data model 
 @Schema(name="Movie",description="Movie representation")
 public class Movie {
 	
