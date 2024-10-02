@@ -1,5 +1,5 @@
 # quarkus
-1) QuarkusBasic is the basic example .
+1) QuarkusBasic are the basic examples .
 
 # Quarkus and microprofile 
 
