@@ -5,7 +5,7 @@ This project uses Quarkus, the Supersonic Subatomic Java Framework.
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
 ## Cors issue 
-![Alt text](sdsd)
+![Alt text](https://github.com/ramanamuttana/quarkusexamples/blob/main/cors-filter/Screenshot%202023-01-02%20at%2023.08.33.png)
 
 ## Running the application in dev mode
 
