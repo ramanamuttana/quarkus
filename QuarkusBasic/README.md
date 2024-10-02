@@ -1,4 +1,6 @@
-quarkus-microprofile Proect 
+quarkus-microprofile Project 
+
+1) ExampleResource from src is the basic example 
 
 # code-with-quarkus Project
 
