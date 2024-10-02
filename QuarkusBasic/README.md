@@ -1,6 +1,6 @@
 quarkus-microprofile Project 
 
-1) ExampleResource from src is the basic example 
+1) <b>ExampleResource</b> from src is the basic example 
 
 # code-with-quarkus Project
 
