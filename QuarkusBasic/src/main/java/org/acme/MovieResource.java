@@ -16,7 +16,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.acme.Movie;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
@@ -52,7 +51,7 @@ public class MovieResource {
 		return Response.ok(movies).build();
 	}
 	
-	// get size of the movies 
+	// get size of the movies ‚
 	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
